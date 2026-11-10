@@ -116,8 +116,8 @@ export const requirements: readonly Requirement[] = [
 
 export const closing = {
   eyebrow: 'On the Lead title',
-  title: '{{Lead title 聲明 — 標題}}',
-  body: '{{Lead title 聲明 — 內容}}',
+  title: 'Frontend engineer who builds things that last.',
+  body: "6 years of frontend work, including a 2-year, ongoing partnership with the same client, where the CTO invited me to join their hackathon. Based in Taiwan, working remotely from wherever I’m living.",
 };
 
 export const links: readonly ContactLink[] = [
