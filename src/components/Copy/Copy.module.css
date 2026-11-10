@@ -1,0 +1,11 @@
+.placeholder {
+  display: inline;
+  padding: 0.05em 0.4em;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-regular);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}

@@ -1,0 +1,30 @@
+.shell {
+  max-width: calc(var(--shell-max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.main {
+  min-width: 0;
+}
+
+/* Wide screens: sticky nav column beside the reading column. */
+@media (min-width: 68rem) {
+  .shell {
+    display: grid;
+    grid-template-columns: var(--nav-width) minmax(0, var(--content-max));
+    column-gap: var(--nav-gap);
+  }
+
+  .aside {
+    /* Nav top lines up with the hero eyebrow. */
+    padding-top: var(--hero-top);
+  }
+}
+
+.footer {
+  padding-block: var(--space-6) var(--space-8);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}

@@ -1,0 +1,89 @@
+/*
+ * Design tokens. Colors use light-dark(), so the page follows the system
+ * theme with no JS. A manual override sets [data-theme] on <html>, which
+ * pins color-scheme and therefore every light-dark() value at once.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Neutrals: warm grey */
+  --color-bg: light-dark(#fafaf9, #121211);
+  --color-surface: light-dark(#ffffff, #1a1a19);
+  --color-text: light-dark(#1c1b1a, #ecebe9);
+  --color-text-muted: light-dark(#6b6865, #9d9a96);
+  --color-border: light-dark(#e6e4e1, #262524);
+  --color-border-strong: light-dark(#d4d1cd, #3a3936);
+
+  /* Accent: low-saturation coral, used sparingly */
+  --color-accent: light-dark(#a8503f, #e3907e);
+  --color-accent-soft: light-dark(#f5e8e4, #2b1e1b);
+
+  /* Type */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  --text-display: clamp(2.5rem, 1.8rem + 3.2vw, 4.25rem);
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 650;
+
+  /* Spacing: 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Layout */
+  --header-height: 3.5rem;
+  --content-max: 42.5rem;
+  --nav-width: 13rem;
+  --nav-gap: var(--space-9);
+  /* Width of the visible layout; header and body share it so edges align. */
+  --shell-max: var(--content-max);
+  --hero-top: calc(var(--header-height) + clamp(var(--space-8), 14vh, var(--space-10)));
+  --gutter: 1rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+/* Keep in sync with the nav breakpoint in App.module.css and SectionNav.module.css. */
+@media (min-width: 68rem) {
+  :root {
+    --shell-max: calc(var(--nav-width) + var(--nav-gap) + var(--content-max));
+  }
+}
