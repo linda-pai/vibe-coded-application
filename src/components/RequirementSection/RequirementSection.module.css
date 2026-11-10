@@ -59,6 +59,8 @@
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
+  /* Fill each line instead of the global heading balance, which leaves short ragged lines. */
+  text-wrap: pretty;
 }
 
 .evidenceBody {
