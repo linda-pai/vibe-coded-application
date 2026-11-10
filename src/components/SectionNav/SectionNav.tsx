@@ -1,5 +1,6 @@
 import { requirements } from '../../content';
 import { useActiveSection } from '../../hooks/useActiveSection';
+import { formatIndex } from '../../utils/formatIndex';
 import styles from './SectionNav.module.css';
 
 const ids = requirements.map((requirement) => requirement.id);
@@ -19,7 +20,7 @@ export function SectionNav() {
                 className={styles.link}
                 aria-current={isActive ? 'location' : undefined}
               >
-                <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
+                <span className={styles.index}>{formatIndex(index + 1)}</span>
                 <span>{requirement.label}</span>
               </a>
             </li>

@@ -1,0 +1,62 @@
+/*
+ * Shared patterns, consumed with `composes:` from component modules.
+ * Each one exists because it appeared in more than one component.
+ */
+
+/*
+ * Metadata register: labels, URLs, captions, navigation.
+ * Same family as the reading text; set apart by size and slashed zeros.
+ */
+.meta {
+  font-size: var(--text-sm);
+  font-feature-settings: 'zero';
+  letter-spacing: 0;
+}
+
+/*
+ * Tabular figures, so numbers line up like code. Only on pure numbers:
+ * in Inter, 'tnum' also widens hyphens and would space out "end-to-end".
+ */
+.numeric {
+  font-feature-settings: 'tnum', 'zero';
+}
+
+/* Small uppercase label. Color is set by the consumer. */
+.label {
+  composes: meta;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* Top-level page section below the hero. */
+.section {
+  padding-block: var(--section-space);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+/*
+ * Reveal children on scroll. The element sets data-in-view (see useInView).
+ * Skipped entirely for reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal > * {
+    transition:
+      opacity var(--duration-reveal) var(--ease-out),
+      transform var(--duration-reveal) var(--ease-out);
+  }
+
+  .reveal > :nth-child(2) {
+    transition-delay: var(--stagger);
+  }
+
+  .reveal > :nth-child(3) {
+    transition-delay: calc(2 * var(--stagger));
+  }
+
+  .reveal[data-in-view='false'] > * {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+}

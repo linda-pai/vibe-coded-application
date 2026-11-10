@@ -1,5 +1,6 @@
 import type { Requirement } from '../../content';
 import { useInView } from '../../hooks/useInView';
+import { formatIndex } from '../../utils/formatIndex';
 import { Copy, Prose } from '../Copy/Copy';
 import styles from './RequirementSection.module.css';
 
@@ -49,8 +50,4 @@ export function RequirementSection({ requirement, index, total }: Props) {
       </div>
     </section>
   );
-}
-
-function formatIndex(value: number): string {
-  return String(value).padStart(2, '0');
 }

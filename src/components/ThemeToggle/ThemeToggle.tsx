@@ -26,7 +26,7 @@ function SunIcon() {
         d="M10 1.75v2M10 16.25v2M1.75 10h2M16.25 10h2M4.17 4.17l1.41 1.41M14.42 14.42l1.41 1.41M4.17 15.83l1.41-1.41M14.42 5.58l1.41-1.41"
         stroke="currentColor"
         strokeWidth="1.5"
-        strokeLinecap="round"
+        strokeLinecap="square"
       />
     </svg>
   );
@@ -40,7 +40,7 @@ function MoonIcon() {
         fill="none"
         stroke="currentColor"
         strokeWidth="1.5"
-        strokeLinejoin="round"
+        strokeLinejoin="miter"
       />
     </svg>
   );

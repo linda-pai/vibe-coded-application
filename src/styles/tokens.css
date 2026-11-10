@@ -1,25 +1,30 @@
 /*
- * Design tokens. Colors use light-dark(), so the page follows the system
- * theme with no JS. A manual override sets [data-theme] on <html>, which
- * pins color-scheme and therefore every light-dark() value at once.
+ * Design tokens: the single source of every value in DESIGN.md.
+ *
+ * Colors use light-dark(), so the page follows the system theme with no JS.
+ * A manual override sets [data-theme] on <html>, which pins color-scheme and
+ * therefore every light-dark() value at once.
+ *
+ * Breakpoints cannot be custom properties in media queries; they are listed
+ * in DESIGN.md and used literally: 30rem, 40rem, 68rem.
  */
 :root {
   color-scheme: light dark;
 
-  /* Neutrals: warm grey */
-  --color-bg: light-dark(#fafaf9, #121211);
-  --color-surface: light-dark(#ffffff, #1a1a19);
-  --color-text: light-dark(#1c1b1a, #ecebe9);
-  --color-text-muted: light-dark(#6b6865, #9d9a96);
-  --color-border: light-dark(#e6e4e1, #262524);
-  --color-border-strong: light-dark(#d4d1cd, #3a3936);
+  /* Color: neutral greys plus one accent */
+  --color-bg: light-dark(#fafafa, #0a0a0a);
+  --color-surface: light-dark(#ffffff, #141414);
+  --color-text: light-dark(#0a0a0a, #ededed);
+  --color-text-muted: light-dark(#666666, #8f8f8f);
+  --color-border: light-dark(#e5e5e5, #222222);
+  --color-border-strong: light-dark(#d0d0d0, #333333);
+  --color-accent: light-dark(#3f7a52, #8ab896);
+  --color-accent-soft: light-dark(#e6f0e8, #17251b);
 
-  /* Accent: low-saturation coral, used sparingly */
-  --color-accent: light-dark(#a8503f, #e3907e);
-  --color-accent-soft: light-dark(#f5e8e4, #2b1e1b);
-
-  /* Type */
+  /* Font family: one family, Inter, for everything */
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Font size */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1.0625rem;
@@ -28,10 +33,22 @@
   --text-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
   --text-display: clamp(2.5rem, 1.8rem + 3.2vw, 4.25rem);
 
+  /* Font weight */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 650;
+
+  /* Line height */
+  --leading-tight: 1.05;
+  --leading-snug: 1.3;
+  --leading-normal: 1.45;
+  --leading-body: 1.65;
+
+  /* Letter spacing */
+  --tracking-tight: -0.035em;
+  --tracking-snug: -0.015em;
+  --tracking-wide: 0.06em;
 
   /* Spacing: 4px base */
   --space-1: 0.25rem;
@@ -44,20 +61,28 @@
   --space-8: 4rem;
   --space-9: 6rem;
   --space-10: 8rem;
+  --section-space: clamp(var(--space-8), 10vw, var(--space-9));
+
+  /* Borders: no radius anywhere, by design */
+  --border-width: 1px;
+  --border-width-accent: 2px;
 
   /* Layout */
   --header-height: 3.5rem;
   --content-max: 42.5rem;
+  --measure-hook: 34ch;
   --nav-width: 13rem;
   --nav-gap: var(--space-9);
+  --control-size: 2.25rem;
   /* Width of the visible layout; header and body share it so edges align. */
   --shell-max: var(--content-max);
   --hero-top: calc(var(--header-height) + clamp(var(--space-8), 14vh, var(--space-10)));
   --gutter: 1rem;
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-reveal: 600ms;
+  --stagger: 80ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -75,15 +100,9 @@
   }
 }
 
-@media (min-width: 64rem) {
-  :root {
-    --gutter: 2rem;
-  }
-}
-
-/* Keep in sync with the nav breakpoint in App.module.css and SectionNav.module.css. */
 @media (min-width: 68rem) {
   :root {
+    --gutter: 2rem;
     --shell-max: calc(var(--nav-width) + var(--nav-gap) + var(--content-max));
   }
 }

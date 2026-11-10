@@ -1,11 +1,12 @@
+/* Unfilled {{placeholder}}: dashed and muted, so it reads as a template slot. */
 .placeholder {
   display: inline;
   padding: 0.05em 0.4em;
-  border: 1px dashed var(--color-border-strong);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  border: var(--border-width) dashed var(--color-border-strong);
+  background: var(--color-surface);
   color: var(--color-text-muted);
   font-weight: var(--weight-regular);
+  letter-spacing: 0;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
