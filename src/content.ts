@@ -121,9 +121,13 @@ export const closing = {
 };
 
 export const links: readonly ContactLink[] = [
-  { label: 'GitHub', display: '{{GitHub 顯示文字}}', href: '{{GitHub URL}}' },
-  { label: 'Portfolio', display: '{{Portfolio 顯示文字}}', href: '{{Portfolio URL}}' },
-  { label: 'LifeBook', display: '{{LifeBook 顯示文字}}', href: '{{LifeBook URL}}' },
-  { label: 'Email', display: '{{Email 地址}}', href: '{{mailto: 連結}}' },
-  { label: 'LinkedIn', display: '{{LinkedIn 顯示文字}}', href: '{{LinkedIn URL}}' },
+  { label: 'GitHub', display: 'github.com/linda-pai', href: 'https://github.com/linda-pai' },
+  { label: 'Portfolio', display: 'juoyingpai.vercel.app', href: 'https://juoyingpai.vercel.app' },
+  { label: 'LifeBook', display: 'lifebooks-mu.vercel.app', href: 'https://lifebooks-mu.vercel.app' },
+  { label: 'Email', display: 'juoyingpai@gmail.com', href: 'mailto:juoyingpai@gmail.com' },
+  {
+    label: 'LinkedIn',
+    display: 'linkedin.com/in/linda-pai',
+    href: 'https://www.linkedin.com/in/linda-pai/',
+  },
 ];
