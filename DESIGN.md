@@ -163,7 +163,7 @@ pulled into components with `composes:`.
 | Requirement block      | `RequirementSection`                             | One component, rendered for each entry in `content.ts` |
 | Section navigation     | `SectionNav` + `useActiveSection`                | Wide screens only                                  |
 | Closing and links      | `Closing`                                        | Rows with placeholder URLs render inert            |
-| Any piece of copy      | `Copy` / `Prose`                                 | Marks unfilled `{{placeholders}}`                  |
+| Any piece of copy      | `Copy` / `Prose`                                 | Marks unfilled `{{placeholders}}`; renders `` `code` `` as a framed inline span |
 | Section numbering      | `formatIndex` (`src/utils`)                      | Always two digits                                  |
 
 All copy lives in [`src/content.ts`](src/content.ts). Components contain no
@@ -199,6 +199,7 @@ Literal values that remain on purpose under rule 1:
 | -------------------------------- | ----------------- | ---------------------------------------- |
 | `Header.module.css` `.cursor`    | `1ch` × `1.1em`   | Block cursor sized to the adjacent text  |
 | `Copy.module.css` `.placeholder` | `em` padding      | Scales with whatever text it replaces    |
+| `Copy.module.css` `.code`        | `em` padding/size | Scales with the sentence it sits in      |
 | `Closing.module.css` `.arrow`    | `0.15em` nudge    | Scales with the arrow glyph              |
 | `ThemeToggle.tsx`                | SVG size, stroke  | Icon geometry                            |
 | `global.css` `.visually-hidden`  | `1px`             | Standard accessible-hiding pattern       |

@@ -10,3 +10,17 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+
+/*
+ * Inline `code`. Same family as the text around it (one typeface); set
+ * apart by a hairline frame and slashed zeros instead of a mono font.
+ */
+.code {
+  padding: 0.05em 0.3em;
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.9em;
+  font-feature-settings: 'zero';
+}
